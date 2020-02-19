@@ -7,7 +7,8 @@ app_name = 'icecream'
 
 urlpatterns = [
     # create path for add
-    path('icecream/', views.IndexView.as_view()),
+    # path('icecream/', views.ListView.as_view(), name = 'index'),
+    path('<str:selection>', views.IndexView.as_view(), name ='selection'),
     path('', views.IndexView.as_view(), name = 'index')
 ]
 

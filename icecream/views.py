@@ -6,20 +6,25 @@ class IndexView(generic.ListView):
     template_name = 'icecream/index.html'
     model = Icecream
 
-    def get_context_data(self, **kwargs):
-        daily = Icecream.objects.filter(available = 'daily')
-        weekly = Icecream.objects.filter(available = 'weekly')
-        seasonal = Icecream.objects.filter(available = 'seasonal')
-        featured = Icecream.objects.filter(featured = True)
+    # def get_queryset(self):
+    #     if selection is self.kwargs:
+    #         return IceCream.objects.filter(available=self.kwargs['selection']).lower()
+    #     return IceCream.objects.filter('__all__')
 
-        context = {
-            'daily': daily,
-            'weekly': weekly,
-            'seasonal': seasonal,
-            'featured': featured
-        }
-
-        return context
+    # def get_context_data(self, **kwargs):
+    #     daily = Icecream.objects.filter(available = 'daily')
+    #     weekly = Icecream.objects.filter(available = 'weekly')
+    #     seasonal = Icecream.objects.filter(available = 'seasonal')
+    #     featured = Icecream.objects.filter(featured = True)
+    #
+    #     context = {
+    #         'daily': daily,
+    #         'weekly': weekly,
+    #         'seasonal': seasonal,
+    #         'featured': featured
+    #     }
+    #
+    #     return context
 
 ## Need CreateView, DetailView, DeleteView, UpdateView
 ## With template_name and model

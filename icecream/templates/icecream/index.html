@@ -2,30 +2,33 @@
 
 {% block flavors %}
 
-
+{% for icecream in object_list %}
+  <h4>{{ icecream.flavor }}</h4>
+{% endfor %}
+  <!-- <h1>Featured Ice Cream</h1>
 {% for icecream in featured %}
-  <h1>Featured Ice Cream</h1>
+
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
 
-
+<h1>Weekly Flavors</h1>
 {% for icecream in weekly %}
-  <h1>Weekly Flavors</h1>
+
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
 
-
-{% for icecream in daily %}
   <h1>Daily Flavors</h1>
+{% for icecream in daily %}
+
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
 
-
-{% for icecream in weekly %}
   <h1>Weekly Flavors</h1>
+{% for icecream in weekly %}
+
   <h3><a href="">{{ icecream.flavor }}</a></h3>
-{% endfor %}
+{% endfor %} -->
 {% endblock flavors %}
