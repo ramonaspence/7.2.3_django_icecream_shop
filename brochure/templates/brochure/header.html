@@ -1,9 +1,9 @@
 <nav class='row'>
   <ul class='col d-flex'>
     <li class='col-1'><a href="">About</a></li>
-    <li class='col'><p>Filter<a href="{% url 'icecream:index'%}">Flavors</a></li>
-      <li class='col'><a href="{% url 'icecream:index'%}">Featured</a></li>
-    <li class='col'><a href="{% url 'icecream:index'%}">Daily</a></li>
-    <li class='col'><a href="{% url 'icecream:index'%}">Weekly</a></li>
-    <li class='col'><a href="{% url 'icecream:index'%}">Seasonal</a></li>
+    <li class='col'><p><a href="{% url 'icecream:index'%}">Flavors</a>Filter by</li>
+    <li class='col'><a href="{% url 'icecream:selection' 'featured' %}">Featured</a></li>
+    <li class='col'><a href="{% url 'icecream:selection' 'daily' %}">Daily</a></li>
+    <li class='col'><a href="{% url 'icecream:selection' 'weekly' %}">Weekly</a></li>
+    <li class='col'><a href="{% url 'icecream:selection' 'seasonal' %}">Seasonal</a></li>
 </nav>

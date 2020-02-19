@@ -6,10 +6,10 @@ class IndexView(generic.ListView):
     template_name = 'icecream/index.html'
     model = Icecream
 
-    # def get_queryset(self):
-    #     if selection is self.kwargs:
-    #         return IceCream.objects.filter(available=self.kwargs['selection']).lower()
-    #     return IceCream.objects.filter('__all__')
+    def get_queryset(self):
+        if 'selection' in self.kwargs:
+            return Icecream.objects.filter(available=self.kwargs['selection'].lower())
+        return Icecream.objects.all()
 
     # def get_context_data(self, **kwargs):
     #     daily = Icecream.objects.filter(available = 'daily')
@@ -25,6 +25,21 @@ class IndexView(generic.ListView):
     #     }
     #
     #     return context
+
+class CreateView(generic.CreateView):
+    template_name = 'icecream/add.html'
+    model = Icecream
+    fields = '__all__'
+
+class DeleteView(generic.DeleteView):
+    model = Icecream
+    success_url = reverse_lazy('icecream:index')
+
+class UpdateView(generic.UpdateView):
+    model = Icecream
+    fields = '__all__'
+    template_name_suffix = '_update_form'
+
 
 ## Need CreateView, DetailView, DeleteView, UpdateView
 ## With template_name and model

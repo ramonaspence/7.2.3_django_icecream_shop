@@ -12,5 +12,8 @@ class Icecream(models.Model):
     def __str__(self):
         return self.flavor
 
+    def get_absolute_url(self):
+        return reverse('icecream:index')
+
 
 # Create your models here.

@@ -1,9 +1,15 @@
 {% extends 'brochure/base.html' %}
 
-{% block flavors %}
 
+
+{% block flavors %}
+<h5><a href="{% url 'icecream:add' %}">Add Flavor</a></h5>
 {% for icecream in object_list %}
   <h4>{{ icecream.flavor }}</h4>
+  <p><a href="{% url 'icecream:delete' icecream.id %}">Delete</a></p>
+  <p><a href="{% url 'icecream:edit' icecream.id %}">Edit</a></p>
+
+
 {% endfor %}
   <!-- <h1>Featured Ice Cream</h1>
 {% for icecream in featured %}
