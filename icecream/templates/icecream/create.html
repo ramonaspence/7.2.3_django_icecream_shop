@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <form method='post'>{% csrf_token %}
+    {{form.as_p}}
+    <button>Add new</button>
+    </form>
+
+  {% endblock content %}
+
+<!-- form method needs csrf_token for protects and form.as_p wraps each field into p tag -->

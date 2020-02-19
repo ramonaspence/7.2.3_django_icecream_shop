@@ -40,6 +40,7 @@ Under each heading display a listing of the flavors that fit that category.
  * Overwrite the ```get_queryset()``` method in your view so that it filters the menu by selection - featured, daily, weekly, or seasonal flavors
 * Create a view that will display the details of a single ice cream
 * Create a view that will allow you to add a new ice cream flavor
+* Create a Delete function within the DetailView
 ## Hey Mikey, I think He Likes It Mode
 * The featured flavors also display as daily or weekly flavors. Update the ```get_queryset``` method so that daily, weekly and seasonal flavors don't include any flavors that are featured. This will make sure featured flavors only show under the featured list.
 * Add an image url to your database model

@@ -1,27 +1,31 @@
 {% extends 'brochure/base.html' %}
 
 {% block flavors %}
-<h1>Featured Ice Cream</h1>
+
 
 {% for icecream in featured %}
+  <h1>Featured Ice Cream</h1>
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
-<h1>Seasonal Flavors</h1>
+
 
 {% for icecream in weekly %}
+  <h1>Weekly Flavors</h1>
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
-<h1>Daily Flavors</h1>
+
 
 {% for icecream in daily %}
+  <h1>Daily Flavors</h1>
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 
-<h1>Weekly Flavors</h1>
+
 
 {% for icecream in weekly %}
+  <h1>Weekly Flavors</h1>
   <h3><a href="">{{ icecream.flavor }}</a></h3>
 {% endfor %}
 {% endblock flavors %}

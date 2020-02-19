@@ -1,5 +1,5 @@
 from django.views import generic
-
+from django.urls import reverse_lazy ##reverse_lazy returns you after function is completed (use for delete)
 from .models import Icecream
 
 class IndexView(generic.ListView):
@@ -20,11 +20,8 @@ class IndexView(generic.ListView):
         }
 
         return context
-    # def get_queryset(self):
-    #     filter = models
-    #     return Icecream.objects.filter(available = 'weekly')
 
-        # qs = super().get_queryset()
-        # # filter by a variable captured from url, for example
-        # return qs.filter(name__startswith=self.kwargs['name'])
-# Create your views here.
+## Need CreateView, DetailView, DeleteView, UpdateView
+## With template_name and model
+
+##create class for CreateView
