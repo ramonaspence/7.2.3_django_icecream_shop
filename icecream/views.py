@@ -11,6 +11,11 @@ class IndexView(generic.ListView):
             return Icecream.objects.filter(available=self.kwargs['selection'].lower())
         return Icecream.objects.all()
 
+    def get_queryset(self):
+        if 'featured' in self.kwargs:
+            return Icecream.objects.filter(featured=True)
+        return Icecream.objects.all()
+
     # def get_context_data(self, **kwargs):
     #     daily = Icecream.objects.filter(available = 'daily')
     #     weekly = Icecream.objects.filter(available = 'weekly')
@@ -39,6 +44,11 @@ class UpdateView(generic.UpdateView):
     model = Icecream
     fields = '__all__'
     template_name_suffix = '_update_form'
+
+class DetailView(generic.DetailView):
+    model = Icecream
+    template_name = 'icecream/detail.html'
+    
 
 
 ## Need CreateView, DetailView, DeleteView, UpdateView
