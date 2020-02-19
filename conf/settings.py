@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #local
     'brochure.apps.BrochureConfig',
+    'icecream.apps.IcecreamConfig',
 ]
 
 MIDDLEWARE = [
