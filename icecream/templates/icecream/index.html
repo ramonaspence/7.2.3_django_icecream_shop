@@ -3,13 +3,19 @@
 
 
 {% block flavors %}
-<h5><a href="{% url 'icecream:add' %}">Add Flavor</a></h5>
-{% for icecream in object_list %}
-  <h4>{{ icecream.flavor }}</h4>
-  <p><a href="{% url 'icecream:detail' icecream.id %}">Details</a></p>
-  <p><a href="{% url 'icecream:delete' icecream.id %}">Delete</a></p>
-  <p><a href="{% url 'icecream:edit' icecream.id %}">Edit</a></p>
+  <h5 class='btn btn-primary'><a href="{% url 'icecream:add' %}">Add Flavor</a></h5>
 
+{% for icecream in object_list %}
+<div class="row main-modal">
+  <div class="modal-header card col-12 d-flex">
+      <h4>{{ icecream.flavor }}</h4>
+    <div class="modal-body d-flex justify-content-around">
+      <p><a href="{% url 'icecream:detail' icecream.id %}">Details</a></p>
+      <p><a href="{% url 'icecream:delete' icecream.id %}">Delete</a></p>
+      <p><a href="{% url 'icecream:edit' icecream.id %}">Edit</a></p>
+    </div>
+  </div>
+</div>
 
 {% endfor %}
   <!-- <h1>Featured Ice Cream</h1>
