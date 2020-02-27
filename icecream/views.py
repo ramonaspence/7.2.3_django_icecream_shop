@@ -8,13 +8,15 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         if 'selection' in self.kwargs:
-            return Icecream.objects.filter(available=self.kwargs['selection'].lower())
+            filter = self.kwargs['selection']
+
+            if filter == 'featured':
+                return Icecream.objects.filter(featured=True)
+            else:
+                return Icecream.objects.filter(available=self.kwargs['selection'].lower())
         return Icecream.objects.all()
 
-    def get_queryset(self):
-        if 'featured' in self.kwargs:
-            return Icecream.objects.filter(featured=True)
-        return Icecream.objects.all()
+    ##should not have multiple get_queryset methods
 
     # def get_context_data(self, **kwargs):
     #     daily = Icecream.objects.filter(available = 'daily')
@@ -48,7 +50,7 @@ class UpdateView(generic.UpdateView):
 class DetailView(generic.DetailView):
     model = Icecream
     template_name = 'icecream/detail.html'
-    
+
 
 
 ## Need CreateView, DetailView, DeleteView, UpdateView

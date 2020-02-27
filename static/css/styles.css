@@ -37,7 +37,7 @@ li {
 }
 .main-modal {
   display: flex;
-  
+  align-items: center;
 }
 .main div {
   width: 35vw;
